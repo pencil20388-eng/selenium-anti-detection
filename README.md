@@ -2,8 +2,6 @@
 
 用 Selenium 做自动化或爬虫，跑着跑着被网站识别成机器人、弹验证码、甚至封 IP，是几乎每个人都会遇到的问题。这篇讲清楚 Selenium 为什么会被检测，以及从免费到进阶的几种解决办法，附完整可运行的 Python 代码。
 
-> 🖼️ **【截图 6｜可选】** 这里放一张验证码拦截页 / 网站提示"检测到异常操作"的截图，开头戳中痛点。手头有现成的被拦截截图就用，没有可跳过。
-
 ## 目录
 
 - [Selenium 为什么会被检测](#selenium-为什么会被检测)
@@ -53,7 +51,7 @@ driver.quit()
 
 运行后打开 `before.png`，你会看到无头 Chrome 有好几项检测没通过（比如 webdriver 那一项会标红）。这意味着在有防护的网站上，你的脚本很可能被判定为机器人。
 
-> 🖼️ **【截图 1｜必须】** 这里放 before.png：无头 Chrome 访问 bot.sannysoft.com 的检测结果，红框圈出 webdriver、Chrome、Permissions 等未通过（标红）的项。
+<img width="1418" height="1646" alt="image" src="https://github.com/user-attachments/assets/d9d01bb0-f713-481d-be50-042b960b9e71" />
 
 ## 方案一：用 selenium-stealth 插件伪装
 
@@ -93,7 +91,7 @@ driver.quit()
 
 再打开 `after.png`，你会发现之前标红的几项现在通过了。对付基础的反爬检测，这一步通常够用。
 
-> 🖼️ **【截图 2｜必须】** 这里放 after.png：加了 selenium-stealth 后，同一个 bot.sannysoft.com 页面，之前标红的项变绿/通过。最好和截图 1 形成对比，圈出转绿的项。
+<img width="1418" height="1646" alt="image" src="https://github.com/user-attachments/assets/b6b3ceb2-ce0b-4294-80f7-ee9b5030a8bb" />
 
 ## 方案一的局限
 
