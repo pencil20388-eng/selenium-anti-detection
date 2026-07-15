@@ -156,7 +156,7 @@ requests.get(
     params={"user_id": "你的_profile_id"},
 )
 ```
-<img width="2338" height="12753" alt="image" src="https://github.com/user-attachments/assets/749aab60-34c7-454b-b7ed-dcaa7c3c304c" />
+<img width="2338" height="7715" alt="image" src="https://github.com/user-attachments/assets/3ddf55c5-76d3-4750-b462-4e39c841f884" />
 
 因为这里的浏览器是一个真实的指纹环境，`bot.sannysoft.com` 上那些检测项会自然通过，不需要额外伪装。而且你的 Selenium 代码几乎原样保留，只是把"自己启动的 Chrome"换成了"接管 AdsPower 启动的环境"。
 
