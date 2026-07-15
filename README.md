@@ -111,7 +111,7 @@ driver.quit()
 
 关键是，它不影响你现有的代码。以 AdsPower 为例，它给每个浏览器环境（profile）暴露一个 CDP 端口，你可以用 Selenium 直接接管，原来的自动化逻辑基本不用改。
 
-> 🖼️ **【截图 4｜建议】** 这里放 AdsPower 客户端界面：创建好的浏览器环境列表（几个 profile），或某个 profile 的指纹配置界面。让没用过的开发者知道 profile 长什么样，可圈出 profile ID（对应代码里的 user_id）。
+<img width="1348" height="729" alt="image" src="https://github.com/user-attachments/assets/0d9d0894-8c09-4499-b4b3-51f663b85279" />
 
 先通过 AdsPower 的本地接口启动一个浏览器环境：
 
@@ -156,8 +156,7 @@ requests.get(
     params={"user_id": "你的_profile_id"},
 )
 ```
-
-> 🖼️ **【截图 3｜必须】** 这里放 adspower.png：用 AdsPower 环境 + Selenium 接管访问 bot.sannysoft.com 的结果，全部或几乎全部通过（全绿）。这是引流的关键证据，可跟截图 1、2 对比。
+<img width="2338" height="12753" alt="image" src="https://github.com/user-attachments/assets/749aab60-34c7-454b-b7ed-dcaa7c3c304c" />
 
 因为这里的浏览器是一个真实的指纹环境，`bot.sannysoft.com` 上那些检测项会自然通过，不需要额外伪装。而且你的 Selenium 代码几乎原样保留，只是把"自己启动的 Chrome"换成了"接管 AdsPower 启动的环境"。
 
@@ -190,8 +189,6 @@ for pid in profile_ids:
     # ...
 ```
 
-> 🖼️ **【截图 5｜建议】** 这里放 AdsPower 里多个环境同时打开/运行的样子，或多个 profile 各自不同指纹的对比。直观展示"多账号各自独立"这个卖点。
-
 这样每个账号在网站看来都是一台独立设备、一个独立用户，彼此之间不会因为指纹相同而被关联。这是插件伪装方案做不到的——插件能让一个浏览器看起来不像机器人，但没法让多个账号看起来像多个不同的人。
 
 ## 总结
@@ -202,7 +199,7 @@ Selenium 被检测的处理，分几个层次。
 
 进阶需求，尤其是面对高级反爬、或者需要多账号隔离时，用指纹浏览器提供真实、独立的浏览器环境更稳，而且能通过 CDP 接口无缝接入现有的 Selenium 代码。
 
-指纹浏览器可以参考 [AdsPower](https://www.adspower.net/)，它支持通过本地 API 启动环境、用 Selenium/Playwright 接管，适合自动化和多账号场景。
+指纹浏览器可以参考 [AdsPower]([https://www.adspower.net/](https://www.adspower.net/share/githubx))，它支持通过本地 API 启动环境、用 Selenium/Playwright 接管，适合自动化和多账号场景。
 
 想更深入理解反检测原理，可以看这两份资源：
 
